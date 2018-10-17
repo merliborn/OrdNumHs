@@ -1,4 +1,2 @@
-OrdNum.hi
-OrdNum.o
-OrdNumPR.hi
-OrdNumPR.o
+*.hi
+*.o
