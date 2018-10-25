@@ -13,7 +13,9 @@ instance OrdNum OrdShort where
     toOrdNum 0 = Zero
     toOrdNum n = L 0 (toOrdNum (pred n))
     
-    (.+) = undefined
+    n .+ Zero    = n
+    n .+ (L k a) = L k (n .+ a)
+    
     (.*) = undefined
     (.^) = undefined
 

@@ -13,6 +13,11 @@ class OrdNum a where
     normalize = normalizeWithLevel 0
     
     (.+), (.*), (.^) :: a -> a -> a
+    (o+), (o*), (o^) :: a -> a -> a
+    
+    (o+) = normalize $ (.+)
+    (o*) = normalize $ (.*)
+    (o^) = normalize $ (.^)
     
     toOrdNum :: Natural -> a
 
