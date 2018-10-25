@@ -13,11 +13,11 @@ instance OrdNum OrdShort where
     toOrdNum 0 = Zero
     toOrdNum n = L 0 (toOrdNum (pred n))
     
-    n .+ Zero    = n
-    n .+ (L k a) = L k (n .+ a)
+    n +. Zero    = n
+    n +. (L k a) = L k (n +. a)
     
-    (.*) = undefined
-    (.^) = undefined
+    (*.) = undefined
+    (^.) = undefined
 
 indexOf :: OrdShort -> Natural
 indexOf Zero    = 0

@@ -12,12 +12,12 @@ class OrdNum a where
     
     normalize = normalizeWithLevel 0
     
-    (.+), (.*), (.^) :: a -> a -> a
-    (o+), (o*), (o^) :: a -> a -> a
+    (+.), (*.), (^.) :: a -> a -> a
+    (+:), (*:), (^:) :: a -> a -> a
     
-    (o+) = normalize $ (.+)
-    (o*) = normalize $ (.*)
-    (o^) = normalize $ (.^)
+    n +: m = normalize (n +. m)
+    n *: m = normalize (n *. m)
+    n ^: m = normalize (n ^. m)
     
     toOrdNum :: Natural -> a
 
