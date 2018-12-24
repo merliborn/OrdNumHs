@@ -1,6 +1,10 @@
 -- OrdNum.OrdNumPR
 -- 
 -- type for ordinal numbers <ω^ω
+-- 
+-- OrdShort
+-- Zero  ~= 0
+-- L n α ~= α+ω^n
 
 module OrdNum.OrdNumPR where
 import Numeric.Natural
@@ -20,12 +24,22 @@ instance OrdNum OrdShort where
     n +. Zero    = n
     n +. (L k a) = L k (n +. a)
     
-    (*.) = undefined
+    a *. Zero    = Zero
+    a *. (L k b) = L (k+orderOf a) (a *. b)
+
     (^.) = undefined
 
+-- indexOf α = max{ n | α=ω^n*α' for some α'}
+-- orderOf α = max{ n | ω^n <= α }
 indexOf :: OrdShort -> Natural
-indexOf Zero    = 0
-indexOf (L k a) = k
+indexOf a = f (normalize a)
+    where f Zero    = 0
+          f (L k a) = k
+
+orderOf :: OrdShort -> Natural
+orderOf Zero    = 0
+orderOf (L k a) = if k>(orderOf a) then k
+                                   else orderOf a
 
 instance Ord OrdShort where
     Zero    <= b       = True
