@@ -1,3 +1,7 @@
+-- OrdNum.OrdNumPR
+-- 
+-- type for ordinal numbers <ω^ω
+
 module OrdNum.OrdNumPR where
 import Numeric.Natural
 import OrdNum

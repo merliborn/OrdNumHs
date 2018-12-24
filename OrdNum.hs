@@ -1,8 +1,3 @@
--- OrdNumPR
--- 順序数の記述および算術計算を行う
--- 
--- OrdNumPRで取り扱える順序数はω^ωより小さいものとする。
-
 module OrdNum where
 import Numeric.Natural
 
