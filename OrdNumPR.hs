@@ -29,7 +29,7 @@ instance OrdNum OrdShort where
 
     (^.) = undefined
 
--- indexOf α = max{ n | α=ω^n*α' for some α'}
+-- indexOf α = max{ n | α=ω^n*β for some β}
 -- orderOf α = max{ n | ω^n <= α }
 indexOf :: OrdShort -> Natural
 indexOf a = f (normalize a)
